@@ -50,7 +50,7 @@ public class Generate : MonoBehaviour {
         TileType ww = tileTypes[1];
         TileType pp = tileTypes[2];
         TileType ee = tileTypes[3];
-        GameObject newPlayer = Instantiate(player, new Vector3(startPosX, startPosY, -0.5f),Quaternion.identity); //spawn one player
+        GameObject newPlayer = Instantiate(player, new Vector3(startPosX, startPosY, -1.5f),Quaternion.identity); //spawn one player
         
         GameObject newStart = Instantiate(pp.tileVisual, new Vector3(startPosX, startPosY, -0.5f), Quaternion.identity); //spawn the start tile
         GameObject newEnd = Instantiate(ee.tileVisual, new Vector3(endPosX, endPosY, -0.5f), Quaternion.identity);//spawn the end tile
@@ -79,7 +79,11 @@ public class Generate : MonoBehaviour {
                     walls[counter] = newTile;
                     counter++;
                 }
-                else j--;
+                else 
+                {
+                    j--;
+                    i--;
+                };
 
 
             }
@@ -109,7 +113,7 @@ public class Generate : MonoBehaviour {
                     }
                     else 
                     {
-                        GameObject newEnemy = Instantiate(enemy, new Vector3(wallX, wallY + 1, -0.5f), Quaternion.identity); //and one enemy and break from the loop
+                        GameObject newEnemy = Instantiate(enemy, new Vector3(wallX, wallY + 1, -1.5f), Quaternion.identity); //and one enemy and break from the loop
                         break;
                     } 
                 }
